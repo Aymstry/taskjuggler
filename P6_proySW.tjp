@@ -119,7 +119,7 @@ task WMGame "Web & Mobile Game" {
     task tAndroidDisenno "Front End General Design" {
       # The effort to finish this task is 5 man-days.
       effort 4d
-      allocate dev1 dev2 dev3
+      allocate dev3
     }
     task tAndroidImplementacion "Web Front End Construction" {
       effort 120d
