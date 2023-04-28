@@ -70,7 +70,7 @@ resource dev3 "Peter Green" {
   email "kkk@unizar.es"
 }
 
-shift 4h "monday - friday 4h" {
+shift t4h "monday - friday 4h" {
   workinghours mon - fri 09:00-13:00
 }
 
@@ -78,7 +78,7 @@ resource Ayelen "Ayelen Nuño Gracia" {
   email "799301@unizar.es"
   rate 14
   #works for 4 hours per day
-  shifts 4h
+  shifts t4h
 }
 
 # Now we specify the work packages. The whole project is described as
