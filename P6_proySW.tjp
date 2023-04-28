@@ -27,16 +27,6 @@ project pSix "Web Game"  2023-03-15 +8.5m {
   scenario plan "Plan" {
     scenario actual "Actual"
   }
-
-  [report "Resumen planificaion"]{
-    range today - 2023-12-31
-    output pdf
-    details full
-    # ordena las tareas en el informe según la fecha de inicio planificada.
-    sorttasks planstarts
-    headline "Planificación Inicial del Proyecto"
-  }
-  
 }
 
 # This is not a real copyright for this file. It's just used as an example.
@@ -282,6 +272,11 @@ textreport frame "" {
     center '<[report id="overview"]>'
   }
 
+  textreport infoi "informe plan" {
+    formats html
+    center '<[report id="informe"]>'
+  }
+
   textreport "Status" {
     formats html
     center -8<-
@@ -326,8 +321,25 @@ taskreport overview "" {
   hideresource @all
   balance cost rev
   caption 'All effort values are in man days.'
+  
 }
 
+# A traditional Gantt chart with a project overview.
+taskreport informe "" {
+  scenarios plan
+  headline "Informe"
+  columns bsi { title 'WBS' },
+          name, start, end, effort, cost,
+          revenue, chart { ${TaskTip} }
+  # For this report we like to have the abbreviated weekday in front
+  # of the date. %a is the tag for this.
+  timeformat "%a %Y-%m-%d"
+  loadunit days
+  hideresource @all
+  balance cost rev
+  caption 'All effort values are in man days.'
+  
+}
 
 # Macro to set the background color of a cell according to the alert
 # level of the task.
