@@ -90,6 +90,50 @@ task WMGame "Web & Mobile Game" {
       depends WMGame.deliveries.start
   }
 
+  task tback "Despliegue Back end cloud" {
+    # It is necessary to “purge” the “chargeset” because it has been assigned previously to other variable 
+    purge chargeset
+    chargeset back
+    responsible dev1
+    depends WMGame.tgdesign
+    task taprendizaje "Documentacion y formacion" {
+      # The effort to finish this task is 5 man-days.
+      effort 4d
+      allocate dev1
+    }
+    task tupcloud "Subida a la nube" {
+      effort 12d
+      actual:effort 0d
+      allocate dev1
+      # depends WMGame.tback.tBEd
+      # journalentry 2023-03-28 "Game logic completed before deadline" {
+      #   author boss
+      #   alert green
+      #   summary "The team has ended the game logic before deadline."
+      # }
+    }
+  task tback "Front end Android" {
+    # It is necessary to “purge” the “chargeset” because it has been assigned previously to other variable 
+    purge chargeset
+    chargeset back
+    responsible dev1
+    depends WMGame.tgdesign
+    task tBEd "Front End General Design" {
+      # The effort to finish this task is 5 man-days.
+      effort 4d
+      allocate dev1 dev2 dev3
+    }
+    task tlogic "Web Front End Construction" {
+      effort 12d
+      actual:effort 11d
+      allocate dev1, dev2
+      # depends WMGame.tback.tBEd
+      # journalentry 2023-03-28 "Game logic completed before deadline" {
+      #   author boss
+      #   alert green
+      #   summary "The team has ended the game logic before deadline."
+      # }
+    }
   task tback "Back End" {
     # It is necessary to “purge” the “chargeset” because it has been assigned previously to other variable 
     purge chargeset
