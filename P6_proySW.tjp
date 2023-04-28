@@ -46,6 +46,8 @@ account cost "Project Cost" {
   account manag "Management"
   account wFront "Web Front-End"
   account back "Back-End"
+  account tbackcloud "Despliegue Back end cloud"
+  account tupcloud "Subida a la nube"
 }
 account rev "Payments"
 # The Profit&Loss analysis should be rev - cost accounts.
@@ -103,7 +105,7 @@ task WMGame "Web & Mobile Game" {
     }
     task tupcloud "Subida a la nube" {
       effort 12d
-      actual:effort 0d
+      actual:effort 1d
       allocate dev1
       depends WMGame.tbackcloud.taprendizaje
       # journalentry 2023-03-28 "Game logic completed before deadline" {
