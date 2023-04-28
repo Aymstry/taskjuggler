@@ -28,11 +28,11 @@ project pSix "Web Game"  2023-03-15 +8.5m {
     scenario actual "Actual"
   }
 
-  [report "Initial Plan"]
+  [report "Resumen planificaion"]
   range today - 2023-12-31
   output pdf
   details full
-  columns bsi
+  # ordena las tareas en el informe según la fecha de inicio planificada.
   sorttasks planstarts
   headline "Planificación Inicial del Proyecto"
 }
