@@ -108,11 +108,6 @@ task WMGame "Web & Mobile Game" {
       actual:effort 1d
       allocate dev1
       depends WMGame.tbackcloud.taprendizaje
-      # journalentry 2023-03-28 "Game logic completed before deadline" {
-      #   author boss
-      #   alert green
-      #   summary "The team has ended the game logic before deadline."
-      # }
     }
   }
   task tAndroid "Front end Android" {
@@ -127,15 +122,10 @@ task WMGame "Web & Mobile Game" {
       allocate dev1 dev2 dev3
     }
     task tAndroidImplementacion "Web Front End Construction" {
-      effort 12d
+      effort 120d
       actual:effort 11d
-      allocate dev1, dev2
+      allocate dev1 dev2
       depends WMGame.tAndroid.tAndroidDisenno
-      # journalentry 2023-03-28 "Game logic completed before deadline" {
-      #   author boss
-      #   alert green
-      #   summary "The team has ended the game logic before deadline."
-      # }
     }
   }
   task tback "Back End" {
