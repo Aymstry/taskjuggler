@@ -28,13 +28,15 @@ project pSix "Web Game"  2023-03-15 +8.5m {
     scenario actual "Actual"
   }
 
-  [report "Resumen planificaion"]
-  range today - 2023-12-31
-  output pdf
-  details full
-  # ordena las tareas en el informe según la fecha de inicio planificada.
-  sorttasks planstarts
-  headline "Planificación Inicial del Proyecto"
+  [report "Resumen planificaion"]{
+    range today - 2023-12-31
+    output pdf
+    details full
+    # ordena las tareas en el informe según la fecha de inicio planificada.
+    sorttasks planstarts
+    headline "Planificación Inicial del Proyecto"
+  }
+  
 }
 
 # This is not a real copyright for this file. It's just used as an example.
