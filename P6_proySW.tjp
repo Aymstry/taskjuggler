@@ -230,6 +230,14 @@ task WMGame "Web & Mobile Game" {
       charge 12000.0 onstart
     }
   }
+
+  [report "Initial Plan"]
+    range today - 2023-12-31
+    output pdf
+    details full
+    columns bsi
+    sorttasks planstarts
+    headline "Planificación Inicial del Proyecto"
 }
 
 # Now the project has been specified completely. Stopping here would
