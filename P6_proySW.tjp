@@ -104,7 +104,7 @@ task WMGame "Web & Mobile Game" {
       allocate dev1
     }
     task tupcloud "Subida a la nube" {
-      effort 12d
+      effort 5d
       actual:effort 1d
       allocate dev1
       depends WMGame.tbackcloud.taprendizaje
@@ -122,8 +122,8 @@ task WMGame "Web & Mobile Game" {
       allocate dev3
     }
     task tAndroidImplementacion "Web Front End Construction" {
-      effort 20d
-      actual:effort 11d
+      effort 2d
+      actual:effort 1d
       allocate dev1
       depends WMGame.tAndroid.tAndroidDisenno
     }
@@ -184,12 +184,12 @@ task WMGame "Web & Mobile Game" {
     }    
   }
 
-  task ttest "Accpetance tests" {
+  task ttest "Accpetance tests" { 
+      start 2023-06-01
       effort 10d
       allocate boss
       allocate dev2
       actual:effort 15d
-      start 2023-06-01
       journalentry 2023-04-13 "Problems with the planned dates" {
         author boss
         alert red
